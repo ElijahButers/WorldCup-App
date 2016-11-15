@@ -28,6 +28,7 @@ class ViewController: UIViewController {
   // MARK: - Properties
   fileprivate let teamCellIdentifier = "teamCellReuseIdentifier"
   var coreDataStack: CoreDataStack!
+  var fetchedResultsController: NSFetchedResultsController<Team>!
 
   // MARK: - IBOutlets
   @IBOutlet weak var tableView: UITableView!
