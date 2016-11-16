@@ -37,6 +37,8 @@ class ViewController: UIViewController {
   // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    let fetchRequest: NSFetchRequest<Team> = Team.fetchRequest()
   }
 }
 
