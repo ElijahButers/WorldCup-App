@@ -39,6 +39,14 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     
     let fetchRequest: NSFetchRequest<Team> = Team.fetchRequest()
+    
+    fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStack.managedContext, sectionNameKeyPath: nil, cacheName: nil)
+    
+    do {
+        try fetchedResultsController.performFetch()
+    } catch let error as NSError {
+      print("Fetching error: \(error), \(error.userInfo)")
+    }
   }
 }
 
