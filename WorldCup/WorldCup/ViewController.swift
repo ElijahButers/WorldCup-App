@@ -69,7 +69,11 @@ extension ViewController {
 extension ViewController: UITableViewDataSource {
 
   func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+    
+    guard let sections = fetchedResultsController.sections else {
+      return 0
+    }
+    return sections.count 
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
