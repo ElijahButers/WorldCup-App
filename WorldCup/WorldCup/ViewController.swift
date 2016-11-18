@@ -39,6 +39,8 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     
     let fetchRequest: NSFetchRequest<Team> = Team.fetchRequest()
+    let sort = NSSortDescriptor(key: #keyPath(Team.teamName), ascending: true)
+    fetchRequest.sortDescriptors = [sort]
     
     fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStack.managedContext, sectionNameKeyPath: nil, cacheName: nil)
     
