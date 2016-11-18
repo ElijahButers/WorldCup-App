@@ -58,10 +58,11 @@ extension ViewController {
     guard let cell = cell as? TeamCell else {
       return
     }
-
-    cell.flagImageView.backgroundColor = UIColor.blue
-    cell.teamLabel.text = "Team Name"
-    cell.scoreLabel.text = "Wins: 0"
+    
+    let team = fetchedResultsController.object(at: indexPath)
+    cell.flagImageView.image = UIImage(named: team.imageName!)
+    cell.teamLabel.text = team.teamName
+    cell.scoreLabel.text = "Wins: \(team.wins)"
   }
 }
 
