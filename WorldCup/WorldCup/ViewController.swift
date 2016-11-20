@@ -95,6 +95,12 @@ extension ViewController: UITableViewDataSource {
 
     return cell
   }
+  
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    
+    let sectionInfo = fetchedResultsController.sections?[section]
+    return sectionInfo?.name
+  }
 }
 
 // MARK: - UITableViewDelegate
