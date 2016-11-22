@@ -143,6 +143,6 @@ extension ViewController: NSFetchedResultsControllerDelegate {
   
   func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
     
-    tableView.reloadData()
+    tableView.endUpdates()
   }
 }
