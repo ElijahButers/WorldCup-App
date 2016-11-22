@@ -45,6 +45,7 @@ class ViewController: UIViewController {
     fetchRequest.sortDescriptors = [zoneSort, scoreSort, nameSort]
     
     fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStack.managedContext, sectionNameKeyPath: #keyPath(Team.qualifyingZone), cacheName: "worldCup")
+    fetchedResultsController.delegate = self
     
     do {
         try fetchedResultsController.performFetch()
