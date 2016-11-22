@@ -114,12 +114,14 @@ extension ViewController: UITableViewDelegate {
     let team = fetchedResultsController.object(at: indexPath)
     team.wins = team.wins + 1
     coreDataStack.saveContext()
-    tableView.reloadData()
   }
 }
 
 // MARK: - NSFetchedResultsControllerDelegate
 extension ViewController: NSFetchedResultsControllerDelegate {
   
-  
+  func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    
+    tableView.reloadData()
+  }
 }
