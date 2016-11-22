@@ -116,3 +116,9 @@ extension ViewController: UITableViewDelegate {
     tableView.reloadData()
   }
 }
+
+// MARK: - NSFetchedResultsControllerDelegate
+extension ViewController: NSFetchedResultsControllerDelegate {
+  
+  
+}
