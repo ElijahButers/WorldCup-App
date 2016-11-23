@@ -53,6 +53,13 @@ class ViewController: UIViewController {
       print("Fetching error: \(error), \(error.userInfo)")
     }
   }
+  
+  override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    
+    if motion == .motionShake {
+      addButton.isEnabled = true
+    }
+  }
 }
 
 // MARK: - Internal
