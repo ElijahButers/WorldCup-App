@@ -145,4 +145,18 @@ extension ViewController: NSFetchedResultsControllerDelegate {
     
     tableView.endUpdates()
   }
+  
+  func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+    
+    let indexSet = IndexSet(integer: sectionIndex)
+    
+    switch type {
+    case .insert:
+      tableView.insertSections(indexSet, with: .automatic)
+    case .delete:
+      tableView.deleteSections(indexSet, with: .automatic)
+    default:
+      break
+    }
+  }
 }
